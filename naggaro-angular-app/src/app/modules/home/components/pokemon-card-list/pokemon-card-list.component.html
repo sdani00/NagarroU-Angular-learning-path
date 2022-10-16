@@ -1,0 +1,10 @@
+<div class="pokemon-list">
+  <app-pokemon-card *ngFor="let x of pokemons" [pokemon]="x"></app-pokemon-card>
+</div>
+
+<div class="pagination">
+  <button [disabled]="!pokemonsResponse.previous" (click)="onPrevClicked()">Previous</button>
+  <span class="page-number">{{pageNumber}}</span>
+  <button [disabled]="!pokemonsResponse.next" (click)="onNextClicked()">Next</button>
+</div>
+

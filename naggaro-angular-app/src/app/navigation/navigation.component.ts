@@ -15,4 +15,8 @@ export class NavigationComponent {
   constructor(private userService: UserService) {
     this.userService.adminChanges.subscribe((x) => (this.isAdmin = x));
   }
+
+  onToggleChange(){
+    this.userService.setAdmin(!this.isAdmin);
+  }
 }

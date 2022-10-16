@@ -16,7 +16,7 @@
   z-index: 1;
 }
 
-.mat-toolbar {
+.left-side {
   display: flex;
   gap: 15px;
 }
@@ -34,4 +34,8 @@
 .mat-toolbar a:hover{
   background-color: #4a2689;
 
+}
+
+.mat-toolbar {
+  justify-content: space-between;
 }

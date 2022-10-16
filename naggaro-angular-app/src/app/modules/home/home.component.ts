@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonsService } from './services/pokemons.service';
 import { UserService } from './services/user.service';
 
 @Component({
@@ -8,12 +9,11 @@ import { UserService } from './services/user.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService, private pokemonsService : PokemonsService) { }
 
   ngOnInit(): void {
-  }
-
-  setAsAdmin(){
-    this.userService.setAdmin(true)
+      this.pokemonsService.getPokemons().subscribe(x => {
+          console.log(x);
+      });
   }
 }

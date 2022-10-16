@@ -12,12 +12,21 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './modules/home/home.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { HttpClientModule } from '@angular/common/http';
+import { PokemonCardListComponent } from './modules/home/components/pokemon-card-list/pokemon-card-list.component';
+import { PokemonCardComponent } from './modules/home/components/pokemon-card/pokemon-card.component';
+import {MatCardModule} from '@angular/material/card';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    HomeComponent
+    HomeComponent,
+    PokemonCardListComponent,
+    PokemonCardComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +37,10 @@ import { HomeComponent } from './modules/home/home.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatSlideToggleModule,
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

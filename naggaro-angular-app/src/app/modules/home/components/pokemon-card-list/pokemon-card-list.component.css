@@ -1,0 +1,35 @@
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 40px;
+  width: 80%;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination button {
+  background-color: rgb(13, 82, 233);
+  color: white;
+  width: 120px;
+  border: none;
+  border-radius: 10px;
+  height: 45px;
+}
+.pagination button,span{
+  margin: 100px;
+}
+.page-number{
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.pagination button:hover {
+  background-color: rgb(6, 56, 163);
+  cursor: pointer;
+}
