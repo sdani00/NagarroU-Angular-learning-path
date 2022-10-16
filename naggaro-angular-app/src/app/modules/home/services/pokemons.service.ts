@@ -5,25 +5,26 @@ import { Pokemon } from 'src/api-models/pokemon';
 import { PokemonsResponse } from 'src/api-models/pokemonsResponse';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PokemonsService {
+  private baseApi: string = 'https://pokeapi.co/api/v2/pokemon';
 
-  private baseApi : string = "https://pokeapi.co/api/v2/pokemon";
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient : HttpClient) { }
-
-
-  getPokemons(url?:string) : Observable<PokemonsResponse> {
-    if(url != null){
+  getPokemons(url?: string): Observable<PokemonsResponse> {
+    if (url != null) {
       return this.httpClient.get<PokemonsResponse>(url);
     }
 
     return this.httpClient.get<PokemonsResponse>(this.baseApi);
   }
 
-  getPokemon(url: string) : Observable<Pokemon>{
-      return this.httpClient.get<Pokemon>(url);
+  getPokemon(url: string): Observable<Pokemon> {
+    return this.httpClient.get<Pokemon>(url);
   }
 
+  getPokemonByName(name: string): Observable<Pokemon> {
+    return this.httpClient.get<Pokemon>(`${this.baseApi}/${name}`);
+  }
 }

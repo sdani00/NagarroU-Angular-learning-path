@@ -31,7 +31,7 @@ export class PokemonCardListComponent implements OnInit {
           .subscribe((pokemonByUrl) => {
             let pokemon = new Pokemon();
             pokemon.name = pokemonByUrl.name;
-            pokemon.imageUrl = pokemonByUrl.sprites.front_shiny;
+            pokemon.sprites = pokemonByUrl.sprites;
 
             this.pokemons.push(pokemon);
           });

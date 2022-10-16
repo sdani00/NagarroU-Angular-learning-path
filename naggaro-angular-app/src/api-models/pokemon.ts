@@ -1,7 +1,12 @@
-import { Sprite } from "./sprites";
+import { Sprite } from './sprites';
+import { Type } from './type';
 
-export class Pokemon{
+export class Pokemon {
   name: string;
   sprites: Sprite;
-  imageUrl: string;
+  types: Type[];
+
+  public getImage(): string {
+    return this.sprites?.front_shiny;
+  }
 }

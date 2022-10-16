@@ -21,15 +21,22 @@
   border-radius: 10px;
   height: 45px;
 }
-.pagination button,span{
+
+.pagination button[disabled] {
+  cursor: not-allowed;
+  background-color: rgb(170, 165, 165);
+}
+
+.pagination button,
+span {
   margin: 100px;
 }
-.page-number{
+.page-number {
   font-size: xx-large;
   font-weight: bolder;
 }
 
-.pagination button:hover {
+.pagination button:hover:not([disabled]) {
   background-color: rgb(6, 56, 163);
   cursor: pointer;
 }

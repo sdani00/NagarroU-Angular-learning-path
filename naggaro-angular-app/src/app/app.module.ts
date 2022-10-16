@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PokemonCardListComponent } from './modules/home/components/pokemon-card-list/pokemon-card-list.component';
 import { PokemonCardComponent } from './modules/home/components/pokemon-card/pokemon-card.component';
 import {MatCardModule} from '@angular/material/card';
+import { PokemonDetailsComponent } from './modules/home/components/pokemon-details/pokemon-details.component';
 
 
 
@@ -26,7 +27,8 @@ import {MatCardModule} from '@angular/material/card';
     NavigationComponent,
     HomeComponent,
     PokemonCardListComponent,
-    PokemonCardComponent
+    PokemonCardComponent,
+    PokemonDetailsComponent
   ],
   imports: [
     BrowserModule,
