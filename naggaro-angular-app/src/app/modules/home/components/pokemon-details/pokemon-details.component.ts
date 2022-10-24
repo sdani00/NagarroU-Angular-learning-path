@@ -11,7 +11,7 @@ import { PokemonsService } from '../../services/pokemons.service';
 export class PokemonDetailsComponent implements OnInit {
 
   public pokemon : Pokemon;
-  public imageUrl:string;
+  public imageUrl: string;
   constructor(private activatedRoute : ActivatedRoute, private pokemonService: PokemonsService) { }
 
   ngOnInit(): void {

@@ -39,3 +39,14 @@
 .mat-toolbar {
   justify-content: space-between;
 }
+
+
+.right-side{
+  display: flex;
+  height: 100%;
+  gap:20px
+}
+
+.right-side  mat-slide-toggle{
+  margin: auto;
+}

@@ -40,3 +40,10 @@ span {
   background-color: rgb(6, 56, 163);
   cursor: pointer;
 }
+
+
+.loader{
+  position: absolute;
+  top:50%;
+  left:50%
+}

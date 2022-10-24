@@ -8,7 +8,11 @@
         <a routerLink="/createproduct" *ngIf="isAdmin" routerLinkActive="active-link">Create product</a>
         <a routerLink="/products" *ngIf="isAdmin" routerLinkActive="active-link">Product list</a>
       </div>
-      <mat-slide-toggle (toggleChange)="onToggleChange()"></mat-slide-toggle>
+
+      <div class="right-side">
+        <app-pokemon-search></app-pokemon-search>
+        <mat-slide-toggle (toggleChange)="onToggleChange()"></mat-slide-toggle>
+      </div>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

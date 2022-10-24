@@ -18,8 +18,10 @@ import { PokemonCardListComponent } from './modules/home/components/pokemon-card
 import { PokemonCardComponent } from './modules/home/components/pokemon-card/pokemon-card.component';
 import {MatCardModule} from '@angular/material/card';
 import { PokemonDetailsComponent } from './modules/home/components/pokemon-details/pokemon-details.component';
-
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { PokemonSearchComponent } from './modules/home/components/pokemon-search/pokemon-search.component';
+import {MatInputModule} from '@angular/material/input';
+import { PokemonStatsComponent } from './modules/home/components/pokemon-stats/pokemon-stats.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { PokemonDetailsComponent } from './modules/home/components/pokemon-detai
     HomeComponent,
     PokemonCardListComponent,
     PokemonCardComponent,
-    PokemonDetailsComponent
+    PokemonDetailsComponent,
+    PokemonSearchComponent,
+    PokemonStatsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,9 @@ import { PokemonDetailsComponent } from './modules/home/components/pokemon-detai
     MatListModule,
     MatSlideToggleModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

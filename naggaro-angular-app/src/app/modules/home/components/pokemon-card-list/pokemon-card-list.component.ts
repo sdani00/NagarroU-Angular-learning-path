@@ -12,6 +12,7 @@ export class PokemonCardListComponent implements OnInit {
   public pokemons: Pokemon[] = [];
   public pokemonsResponse: PokemonsResponse;
   public pageNumber: number = 1;
+  public isLoading: boolean;
 
   constructor(private pokemonsService: PokemonsService) {}
 
@@ -20,20 +21,25 @@ export class PokemonCardListComponent implements OnInit {
   }
 
   private loadPokemons(url?: string) {
+    this.isLoading = true;
     this.pokemons = [];
 
-    this.pokemonsService.getPokemons(url).subscribe((pokemonsResponse) => {
+    this.pokemonsService.getPokemons(url).then((pokemonsResponse) => {
       this.pokemonsResponse = pokemonsResponse;
 
       pokemonsResponse.results.forEach((pokemonResult) => {
         this.pokemonsService
           .getPokemon(pokemonResult.url)
           .subscribe((pokemonByUrl) => {
-            let pokemon = new Pokemon();
-            pokemon.name = pokemonByUrl.name;
-            pokemon.sprites = pokemonByUrl.sprites;
+            setTimeout(() => {
+              this.isLoading = false;
 
-            this.pokemons.push(pokemon);
+              let pokemon = new Pokemon();
+              pokemon.name = pokemonByUrl.name;
+              pokemon.sprites = pokemonByUrl.sprites;
+
+              this.pokemons.push(pokemon);
+            }, 500);
           });
       });
     });

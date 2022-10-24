@@ -1,0 +1,50 @@
+.top-section {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.types-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.types-container > span {
+  height: 40px;
+  max-width: 100px;
+  display: flex;
+  padding-right: 10px;
+  padding-left: 10px;
+  align-items: center;
+  background-color: green;
+  color: white;
+}
+
+
+.skill-points{
+  height: 20px;
+  width: 200px;
+  background-color: greenyellow;
+}
+
+.pokemon-stats{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.stats{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 400px;
+}
+.stats > *{
+  flex-grow: 1;
+  width: 50%;
+}
+
+.stats > span {
+  text-align: center;
+}

@@ -12,8 +12,5 @@ export class HomeComponent implements OnInit {
   constructor(private userService:UserService, private pokemonsService : PokemonsService) { }
 
   ngOnInit(): void {
-      this.pokemonsService.getPokemons().subscribe(x => {
-          console.log(x);
-      });
   }
 }

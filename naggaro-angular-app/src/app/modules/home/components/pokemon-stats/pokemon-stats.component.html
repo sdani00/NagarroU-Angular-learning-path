@@ -1,0 +1,19 @@
+<div class="top-section">
+  <div></div>
+  <div class="types-container">
+      <span *ngFor="let type of pokemon.types">{{type.type.name}}</span>
+  </div>
+  <div class="pokemon-id">#1</div>
+</div>
+
+<div class="pokemon-stats">
+  <img [src] = "pokemon.getImage()" alt="pokemon-picture">
+  <div class="stats">
+    <span>HP : </span>
+    <div class="skill-points"></div>
+    <span>HP : </span>
+    <div class="skill-points"></div>
+    <span>HP : </span>
+    <div class="skill-points"></div>
+  </div>
+</div>
