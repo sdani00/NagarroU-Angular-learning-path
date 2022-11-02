@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon } from 'src/api-models/pokemon';
-import { PokemonsResponse } from 'src/api-models/pokemonsResponse';
+import { Pokemon } from 'src/app/modules/home/models/pokemon';
+import { PokemonsResponse } from 'src/app/modules/home/models/pokemonsResponse';
 import { PokemonsService } from '../../services/pokemons.service';
 
 @Component({
@@ -37,6 +37,7 @@ export class PokemonCardListComponent implements OnInit {
               let pokemon = new Pokemon();
               pokemon.name = pokemonByUrl.name;
               pokemon.sprites = pokemonByUrl.sprites;
+              pokemon.stats = pokemonByUrl.stats;
 
               this.pokemons.push(pokemon);
             }, 500);

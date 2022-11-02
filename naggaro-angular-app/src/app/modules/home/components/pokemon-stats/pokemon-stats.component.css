@@ -22,25 +22,33 @@
   color: white;
 }
 
-
-.skill-points{
+.skill-points {
   height: 20px;
   width: 200px;
-  background-color: greenyellow;
+  color: white;
+  background-color: rgb(223, 223, 223);
 }
 
-.pokemon-stats{
+.skill-points > .points-filler {
+  background-color: rgba(0, 128, 0, 0.678);
+}
+.skill-points > .points-filler > .points-value {
+  padding: 10px;
+}
+
+.pokemon-stats {
   display: flex;
   justify-content: center;
   margin-top: 40px;
 }
-.stats{
+
+.stats {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 400px;
 }
-.stats > *{
+.stats > * {
   flex-grow: 1;
   width: 50%;
 }

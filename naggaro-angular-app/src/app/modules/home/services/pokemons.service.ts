@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Pokemon } from 'src/api-models/pokemon';
-import { PokemonsResponse } from 'src/api-models/pokemonsResponse';
-import { firstValueFrom } from 'rxjs';
+import { Pokemon } from 'src/app/modules/home/models/pokemon';
+import { PokemonsResponse } from 'src/app/modules/home/models/pokemonsResponse';
 
 @Injectable({
   providedIn: 'root',
@@ -14,12 +13,12 @@ export class PokemonsService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getPokemons(url?: string): Promise<PokemonsResponse> {
+  async getPokemons(url?: string): Promise<PokemonsResponse> {
     if (url != null) {
-       return firstValueFrom(this.httpClient.get<PokemonsResponse>(url));
+       return (await this.httpClient.get<PokemonsResponse>(url).toPromise())!;
     }
 
-    return firstValueFrom(this.httpClient.get<PokemonsResponse>(this.baseApi));
+    return (await this.httpClient.get<PokemonsResponse>(this.baseApi).toPromise())!;
   }
 
   getPokemon(url: string): Observable<Pokemon> {

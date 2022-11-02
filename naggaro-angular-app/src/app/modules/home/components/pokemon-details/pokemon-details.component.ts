@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Pokemon } from 'src/api-models/pokemon';
+import { Pokemon } from 'src/app/modules/home/models/pokemon';
 import { PokemonsService } from '../../services/pokemons.service';
 
 @Component({
@@ -18,11 +18,11 @@ export class PokemonDetailsComponent implements OnInit {
     let pokemonName = this.activatedRoute.snapshot.params['name'];
     this.pokemonService.getPokemonByName(pokemonName).subscribe((pokemon) =>{
       this.pokemon = new Pokemon();
+
       this.pokemon.name = pokemon.name;
       this.pokemon.sprites = pokemon.sprites;
       this.pokemon.types = pokemon.types;
-      this.imageUrl = this.pokemon.getImage();
-      console.log(this.pokemon.types);
+      this.pokemon.stats = pokemon.stats;
     });
   }
 
