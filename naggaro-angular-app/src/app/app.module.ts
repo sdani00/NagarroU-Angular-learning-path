@@ -22,6 +22,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { PokemonSearchComponent } from './modules/home/components/pokemon-search/pokemon-search.component';
 import {MatInputModule} from '@angular/material/input';
 import { PokemonStatsComponent } from './modules/home/components/pokemon-stats/pokemon-stats.component';
+import { PokemonProfileComponent } from './modules/home/components/pokemon-profile/pokemon-profile.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PokemonStatsComponent } from './modules/home/components/pokemon-stats/p
     PokemonCardComponent,
     PokemonDetailsComponent,
     PokemonSearchComponent,
-    PokemonStatsComponent
+    PokemonStatsComponent,
+    PokemonProfileComponent
   ],
   imports: [
     BrowserModule,

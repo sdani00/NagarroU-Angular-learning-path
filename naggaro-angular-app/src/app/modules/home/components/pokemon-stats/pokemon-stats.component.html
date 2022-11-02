@@ -1,15 +1,15 @@
 <div class="top-section">
   <div></div>
   <div class="types-container">
-    <span *ngFor="let type of pokemon.types">{{ type.type.name }}</span>
+    <span *ngFor="let type of pokemon?.types">{{ type.type.name }}</span>
   </div>
   <div class="pokemon-id">#1</div>
 </div>
 
 <div class="pokemon-stats">
-  <img [src]="pokemon.sprites.front_shiny" alt="pokemon-picture" />
+  <img [src]="pokemon?.sprites.front_shiny" alt="pokemon-picture" />
   <div class="stats">
-    <ng-container *ngFor="let stat of pokemon.stats">
+    <ng-container *ngFor="let stat of pokemon?.stats">
       <span>{{ stat.stat.name }} : </span>
       <div class="skill-points">
         <div class="points-filler" [style]="'width:' + stat.base_stat + '%'">

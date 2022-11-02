@@ -1,5 +1,6 @@
 <div class="page-container">
-  <div class ="pokemon-name"> {{ pokemon.name }}</div>
+  <div class ="pokemon-name"> {{ pokemon?.name }}</div>
 
   <app-pokemon-stats [pokemon]="pokemon"></app-pokemon-stats>
+  <app-pokemon-profile [pokemon]="pokemon"></app-pokemon-profile>
 </div>

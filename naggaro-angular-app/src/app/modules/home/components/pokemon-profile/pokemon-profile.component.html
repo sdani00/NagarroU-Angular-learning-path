@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="profile"> <h1>Profile</h1>
+  </div>
+  <div class="profile-container">
+    <div class="">
+      <span>Height: </span>
+      <span> {{ pokemon?.height }}</span>
+    </div>
+    <div class="">
+      <span>Weight: </span>
+      <span> {{ pokemon?.weight }}</span>
+    </div>
+    <div class="">
+      <span>Catch rate: </span>
+      <span> {{ pokemon?.catchRate }}</span>
+    </div>
+    <div class="">
+      <span>Egg groups: </span>
+      <span *ngFor="let eggGroup of pokemon?.eggGroups"
+        >{{ eggGroup }}, &nbsp;</span
+      >
+    </div>
+    <div class="">
+      <span>Abilities: </span>
+      <span *ngFor="let ability of pokemon?.abilities">
+        {{ ability }}, &nbsp;</span
+      >
+    </div>
+  </div>
+</div>
