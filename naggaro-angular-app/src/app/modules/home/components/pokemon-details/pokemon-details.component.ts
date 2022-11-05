@@ -19,7 +19,7 @@ export class PokemonDetailsComponent implements OnInit {
     let pokemonName = this.activatedRoute.snapshot.params['name'];
     this.pokemonService.getPokemonByName(pokemonName).subscribe((pokemon) =>{
       this.pokemon = new Pokemon();
-
+      this.pokemon.id = pokemon.id;
       this.pokemon.name = pokemon.name;
       this.pokemon.sprites = pokemon.sprites;
       this.pokemon.types = pokemon.types;

@@ -23,6 +23,8 @@ import { PokemonSearchComponent } from './modules/home/components/pokemon-search
 import {MatInputModule} from '@angular/material/input';
 import { PokemonStatsComponent } from './modules/home/components/pokemon-stats/pokemon-stats.component';
 import { PokemonProfileComponent } from './modules/home/components/pokemon-profile/pokemon-profile.component';
+import { PokemonEvolutionComponent } from './modules/home/components/pokemon-evolution/pokemon-evolution.component';
+import { PokemonDamageComponent } from './modules/home/components/pokemon-damage/pokemon-damage.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { PokemonProfileComponent } from './modules/home/components/pokemon-profi
     PokemonDetailsComponent,
     PokemonSearchComponent,
     PokemonStatsComponent,
-    PokemonProfileComponent
+    PokemonProfileComponent,
+    PokemonEvolutionComponent,
+    PokemonDamageComponent
   ],
   imports: [
     BrowserModule,

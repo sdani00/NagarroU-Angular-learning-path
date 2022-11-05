@@ -20,6 +20,13 @@
 }
 
 .profile{
-  text-align:left;
+  text-align:center;
   width: 100%;
+  background-color: rgba(1, 88, 1, 0.836);
+  color: white;
+  padding: 5px;
+}
+
+.profile h2{
+  margin: 0;
 }

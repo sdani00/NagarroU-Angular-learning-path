@@ -33,4 +33,8 @@ export class PokemonsService {
   getSpeciesById(id : number) : Observable<any> {
     return this.httpClient.get<any>(`${this.baseApi}pokemon-species/${id}`);
   }
+
+  getEvolutions(id : number) : Observable<any> {
+    return this.httpClient.get<any>(`${this.baseApi}evolution-chain/${id}`)
+  }
 }
