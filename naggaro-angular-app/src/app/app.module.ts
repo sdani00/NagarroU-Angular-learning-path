@@ -25,6 +25,10 @@ import { PokemonStatsComponent } from './modules/home/components/pokemon-stats/p
 import { PokemonProfileComponent } from './modules/home/components/pokemon-profile/pokemon-profile.component';
 import { PokemonEvolutionComponent } from './modules/home/components/pokemon-evolution/pokemon-evolution.component';
 import { PokemonDamageComponent } from './modules/home/components/pokemon-damage/pokemon-damage.component';
+import { PokemonFormComponent } from './modules/products/pokemon-form/pokemon-form.component';
+import {MatSelectModule} from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +42,8 @@ import { PokemonDamageComponent } from './modules/home/components/pokemon-damage
     PokemonStatsComponent,
     PokemonProfileComponent,
     PokemonEvolutionComponent,
-    PokemonDamageComponent
+    PokemonDamageComponent,
+    PokemonFormComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,9 @@ import { PokemonDamageComponent } from './modules/home/components/pokemon-damage
     HttpClientModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,13 +21,15 @@ export class PokemonCardListComponent implements OnInit {
   }
 
   private loadPokemons(url?: string) {
-    this.isLoading = true;
     this.pokemons = [];
+
+    this.isLoading = true;
 
     this.pokemonsService.getPokemons(url).then((pokemonsResponse) => {
       this.pokemonsResponse = pokemonsResponse;
 
       pokemonsResponse.results.forEach((pokemonResult) => {
+
         this.pokemonsService
           .getPokemon(pokemonResult.url)
           .subscribe((pokemonByUrl) => {

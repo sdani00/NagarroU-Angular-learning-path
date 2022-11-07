@@ -1,0 +1,72 @@
+.form-container {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.container{
+  width: 50%;
+  margin:auto;
+  margin-top: 50px;
+}
+
+.form-container > *{
+  flex: 1;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+
+.phone-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.phone-section > mat-form-field {
+  width: 45%;
+}
+
+.add-product-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-product-button > *{
+  background-color: rgb(33, 143, 216);
+  color: white;
+  padding: 7px;
+  border: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-section img {
+  height: 15px;
+  width: 15px;
+  align-self: center;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: flex-end;
+  margin-top: 50px;
+}
+
+.buttons button {
+  background-color: rgb(33, 143, 216);
+  color: white;
+  border: 0;
+  padding: 7px;
+}
+
+
