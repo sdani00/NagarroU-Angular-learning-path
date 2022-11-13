@@ -21,13 +21,13 @@ export class PokemonEvolutionComponent implements OnInit, OnChanges {
   constructor(private pokemonService: PokemonsService) {}
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['pokemon'] && this.pokemon) {
-    this.getEvolution();
+      this.getEvolution();
     }
   }
 
   minLevel: number;
   evolvesTo: string;
-  imageUrl:string;
+  imageUrl: string;
 
   ngOnInit(): void {}
 
@@ -35,20 +35,14 @@ export class PokemonEvolutionComponent implements OnInit, OnChanges {
     this.pokemonService
       .getEvolutions(this.pokemon.id)
       .subscribe((evolutionResponse) => {
-        console.log(this.pokemon.id);
         this.minLevel =
           evolutionResponse.chain.evolves_to[0].evolution_details[0].min_level;
-          console.log(this.minLevel);
         this.evolvesTo = evolutionResponse.chain.evolves_to[0].species.name;
-        console.log(this.evolvesTo);
-        console.log( evolutionResponse.chain.evolves_to[0]);
-
-        this.pokemonService.getPokemonByName(this.evolvesTo).subscribe((pokemon) => {
-          this.imageUrl = pokemon.sprites.front_shiny;
-          console.log(pokemon);
-        })
+        this.pokemonService
+          .getPokemonByName(this.evolvesTo)
+          .subscribe((pokemon) => {
+            this.imageUrl = pokemon.sprites.front_shiny;
+          });
       });
   }
 }
-
-

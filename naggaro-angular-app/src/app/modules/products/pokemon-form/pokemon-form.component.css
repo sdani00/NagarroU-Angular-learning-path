@@ -8,6 +8,9 @@
   width: 50%;
   margin:auto;
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
 }
 
 .form-container > *{
@@ -31,16 +34,11 @@
   width: 45%;
 }
 
-.add-product-button {
-  display: flex;
-  justify-content: flex-end;
-}
 
-.add-product-button > *{
-  background-color: rgb(33, 143, 216);
-  color: white;
-  padding: 7px;
-  border: 0;
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .container {
@@ -54,19 +52,24 @@
   align-self: center;
 }
 
-.buttons{
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-  justify-content: flex-end;
-  margin-top: 50px;
-}
-
-.buttons button {
+button {
   background-color: rgb(33, 143, 216);
   color: white;
   border: 0;
   padding: 7px;
 }
+
+.button-group {
+  display: flex;
+  margin-top: 20px;
+  gap: 30px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color:  rgb(14, 62, 94);
+}
+
+
 
 

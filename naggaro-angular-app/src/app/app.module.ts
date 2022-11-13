@@ -12,23 +12,26 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './modules/home/home.component';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonCardListComponent } from './modules/home/components/pokemon-card-list/pokemon-card-list.component';
 import { PokemonCardComponent } from './modules/home/components/pokemon-card/pokemon-card.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { PokemonDetailsComponent } from './modules/home/components/pokemon-details/pokemon-details.component';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PokemonSearchComponent } from './modules/home/components/pokemon-search/pokemon-search.component';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { PokemonStatsComponent } from './modules/home/components/pokemon-stats/pokemon-stats.component';
 import { PokemonProfileComponent } from './modules/home/components/pokemon-profile/pokemon-profile.component';
 import { PokemonEvolutionComponent } from './modules/home/components/pokemon-evolution/pokemon-evolution.component';
 import { PokemonDamageComponent } from './modules/home/components/pokemon-damage/pokemon-damage.component';
 import { PokemonFormComponent } from './modules/products/pokemon-form/pokemon-form.component';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { ProductListComponent } from './modules/products/product-list/product-list.component';
+import { ProductCardComponent } from './modules/products/product-card/product-card.component';
+import { CanActivateProductList } from './modules/products/guards/canActivateProductList';
+import { CanShowDetailsPage } from './modules/home/components/guards/canShowDetailsPage';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     PokemonProfileComponent,
     PokemonEvolutionComponent,
     PokemonDamageComponent,
-    PokemonFormComponent
+    PokemonFormComponent,
+    ProductListComponent,
+    ProductCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,9 +66,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatProgressSpinnerModule,
     MatInputModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [CanActivateProductList, CanShowDetailsPage],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

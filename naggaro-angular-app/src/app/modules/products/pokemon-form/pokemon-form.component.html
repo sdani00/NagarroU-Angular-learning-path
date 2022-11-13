@@ -1,10 +1,22 @@
-<form [formGroup]="productForm">
-  <div class="container">
-    <div class="form-container">
+<form [formGroup]="productForms" class="container">
+  <div
+    formArrayName="product"
+    *ngFor="let form of productFormsArray.controls; let i = index"
+  >
+    <div class="form-container" [formGroupName]="i">
       <div class="form-section">
         <mat-form-field>
           <mat-label>Name</mat-label>
-          <input matInput formControlName="name"/>
+          <input matInput formControlName="name" />
+          <span
+            *ngIf="
+              getNameControl(i).errors?.required &&
+              getNameControl(i).invalid &&
+              (getNameControl(i).dirty || getNameControl(i).touched)
+            "
+            style="font-size: smaller; color: red"
+            >Name is requiered</span
+          >
         </mat-form-field>
         <mat-form-field>
           <mat-label>Category </mat-label>
@@ -22,7 +34,7 @@
         </mat-form-field>
         <mat-form-field>
           <mat-label>Image URL</mat-label>
-          <input  formControlName="imageURL" matInput />
+          <input formControlName="imageURL" matInput />
         </mat-form-field>
       </div>
       <div class="form-section">
@@ -40,19 +52,19 @@
           </mat-form-field>
           <mat-form-field>
             <mat-label>Select</mat-label>
-            <mat-select formControlName="select">
-              <mat-option>Telephone</mat-option>
-              <mat-option>Landline</mat-option>
+            <mat-select formControlName="phoneType">
+              <mat-option value="Telephone">Telephone</mat-option>
+              <mat-option value="LandLine">Landline</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
       </div>
     </div>
-    <div class="add-product-button">
-      <button>Add new product</button>
-    </div>
-    <div class="buttons">
-      <button>Reset</button>
+  </div>
+  <div class="actions">
+    <button type='button' (click)="addNewForm()">Add new product</button>
+    <div class="button-group">
+      <button type='button' (click) = "onReset()">Reset</button>
       <button (click)="onSubmit()">Save</button>
     </div>
   </div>
