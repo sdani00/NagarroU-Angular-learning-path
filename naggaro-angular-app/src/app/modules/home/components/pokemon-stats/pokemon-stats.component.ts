@@ -15,6 +15,4 @@ export class PokemonStatsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
 }

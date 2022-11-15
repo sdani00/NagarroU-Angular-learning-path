@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="evolutions"><h2>Evolutions</h2></div>
+  <div class="evolution-container">
+    <div>
+      <img [src]="pokemon?.sprites.front_shiny" />
+    </div>
+    <div style="display:flex;">
+      <span class="arrow" style="align-self:center">&#10132;</span>
+    </div>
+    <div>
+      <img [src]="imageUrl" />
+    </div>
+  </div>
+  <p *ngIf="minLevel">{{pokemon?.name}} evolves into {{evolvesTo}} at Level {{minLevel}}</p>
+</div>

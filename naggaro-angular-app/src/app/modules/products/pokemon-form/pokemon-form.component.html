@@ -1,0 +1,71 @@
+<form [formGroup]="productForms" class="container">
+  <div
+    formArrayName="product"
+    *ngFor="let form of productFormsArray.controls; let i = index"
+  >
+    <div class="form-container" [formGroupName]="i">
+      <div class="form-section">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+          <span
+            *ngIf="
+              getNameControl(i).errors?.required &&
+              getNameControl(i).invalid &&
+              (getNameControl(i).dirty || getNameControl(i).touched)
+            "
+            style="font-size: smaller; color: red"
+            >Name is requiered</span
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Category </mat-label>
+          <mat-select formControlName="category">
+            <mat-option value="Electrocasnics">Electrocasnics</mat-option>
+            <mat-option value="Clothes">Clothes</mat-option>
+            <mat-option>....</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-section">
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <input formControlName="description" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Image URL</mat-label>
+          <input formControlName="imageURL" matInput />
+        </mat-form-field>
+      </div>
+      <div class="form-section">
+        <mat-form-field>
+          <mat-label>Price</mat-label>
+          <input formControlName="price" matInput />
+        </mat-form-field>
+        <div class="phone-section">
+          <img
+            src="data:image/png;base64,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"
+          />
+          <mat-form-field>
+            <mat-label>Phone</mat-label>
+            <input formControlName="phone" matInput />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="phoneType">
+              <mat-option value="Telephone">Telephone</mat-option>
+              <mat-option value="LandLine">Landline</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <button type='button' (click)="addNewForm()">Add new product</button>
+    <div class="button-group">
+      <button type='button' (click) = "onReset()">Reset</button>
+      <button (click)="onSubmit()">Save</button>
+    </div>
+  </div>
+</form>

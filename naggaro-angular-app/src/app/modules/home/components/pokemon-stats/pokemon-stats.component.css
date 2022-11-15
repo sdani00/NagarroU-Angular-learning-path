@@ -56,3 +56,11 @@
 .stats > span {
   text-align: center;
 }
+
+.stats >* {
+  margin-top: 10px;
+}
+
+.pokemon-stats > img {
+  align-self: flex-start;
+}

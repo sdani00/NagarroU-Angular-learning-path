@@ -9,23 +9,32 @@ import { PokemonsResponse } from 'src/app/modules/home/models/pokemonsResponse';
 })
 
 export class PokemonsService {
-  private baseApi: string = 'https://pokeapi.co/api/v2/pokemon';
+  private baseApi: string = 'https://pokeapi.co/api/v2/';
+
 
   constructor(private httpClient: HttpClient) {}
 
-  async getPokemons(url?: string): Promise<PokemonsResponse> {
+  public async getPokemons(url?: string): Promise<PokemonsResponse> {
     if (url != null) {
-       return (await this.httpClient.get<PokemonsResponse>(url).toPromise())!;
+       return (await this.httpClient.get<PokemonsResponse>(url) .toPromise())!;
     }
 
-    return (await this.httpClient.get<PokemonsResponse>(this.baseApi).toPromise())!;
+    return (await this.httpClient.get<PokemonsResponse>(this.baseApi + "pokemon").toPromise())!;
   }
 
-  getPokemon(url: string): Observable<Pokemon> {
+  public getPokemon(url: string): Observable<Pokemon> {
     return this.httpClient.get<Pokemon>(url);
   }
 
-  getPokemonByName(name: string): Observable<Pokemon> {
-    return this.httpClient.get<Pokemon>(`${this.baseApi}/${name}`);
+  public getPokemonByName(name: string): Observable<Pokemon> {
+    return this.httpClient.get<Pokemon>(`${this.baseApi}pokemon/${name}`);
+  }
+
+  public getSpeciesById(id : number) : Observable<any> {
+    return this.httpClient.get<any>(`${this.baseApi}pokemon-species/${id}`);
+  }
+
+  public getEvolutions(id : number) : Observable<any> {
+    return this.httpClient.get<any>(`${this.baseApi}evolution-chain/${id}`)
   }
 }

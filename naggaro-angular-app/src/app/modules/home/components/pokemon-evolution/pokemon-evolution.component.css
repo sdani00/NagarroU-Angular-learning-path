@@ -1,0 +1,21 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.evolution-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.arrow{
+  font-size: xxx-large;
+  color: green;
+}
+
+.evolution-container img {
+  height: 180px;
+}

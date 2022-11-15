@@ -1,0 +1,75 @@
+.form-container {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.container{
+  width: 50%;
+  margin:auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.form-container > *{
+  flex: 1;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+
+.phone-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.phone-section > mat-form-field {
+  width: 45%;
+}
+
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-section img {
+  height: 15px;
+  width: 15px;
+  align-self: center;
+}
+
+button {
+  background-color: rgb(33, 143, 216);
+  color: white;
+  border: 0;
+  padding: 7px;
+}
+
+.button-group {
+  display: flex;
+  margin-top: 20px;
+  gap: 30px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color:  rgb(14, 62, 94);
+}
+
+
+
+

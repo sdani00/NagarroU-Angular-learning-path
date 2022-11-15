@@ -1,0 +1,29 @@
+.wrapper {
+  margin-top: 100px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+}
+
+.left, .right {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align:center;
+  width: 100%;
+  background-color: rgba(1, 88, 1, 0.836);
+  color: white;
+  padding: 5px;
+}
+
+.left > *, .right > * {
+  background-color: rgba(1, 88, 1, 0.836);
+  color: white;
+  padding: 5px;
+}

@@ -1,0 +1,32 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+
+.profile-container > *{
+  flex-grow: 1;
+  width: 50%;
+  margin-top:15px
+}
+
+.profile-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.profile{
+  text-align:center;
+  width: 100%;
+  background-color: rgba(1, 88, 1, 0.836);
+  color: white;
+  padding: 5px;
+}
+
+.profile h2{
+  margin: 0;
+}
